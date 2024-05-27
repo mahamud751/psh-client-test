@@ -9,7 +9,7 @@ const EventDetails = () => {
   const { data: allEvent } = UseFetch(`event`);
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`https://api.psh.com.bd/api/event/${id}`)
+    fetch(`https://psh-server-test.onrender.com/api/event/${id}`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, [id]);

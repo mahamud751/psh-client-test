@@ -38,13 +38,16 @@ function Setting() {
 
     try {
       // Send a request to your server to update the user's password
-      await axios.put(`https://api.psh.com.bd/api/users/${user?.email}`, {
-        userId: user._id,
-        currentPassword,
-        newPassword,
-        phone,
-        email,
-      });
+      await axios.put(
+        `https://psh-server-test.onrender.com/api/users/${user?.email}`,
+        {
+          userId: user._id,
+          currentPassword,
+          newPassword,
+          phone,
+          email,
+        }
+      );
 
       MySwal.fire({
         icon: "success",

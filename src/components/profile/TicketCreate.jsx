@@ -21,7 +21,9 @@ const TicketCreate = ({ handleOpen, open }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://api.psh.com.bd/api/branch");
+        const response = await axios.get(
+          "https://psh-server-test.onrender.com/api/branch"
+        );
         SetBranch(response.data);
       } catch (error) {
         console.log(error);
@@ -49,7 +51,10 @@ const TicketCreate = ({ handleOpen, open }) => {
         userNumber: user?.phone,
       };
 
-      await axios.post("https://api.psh.com.bd/api/issue", product);
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/issue",
+        product
+      );
       MySwal.fire("Good job!", "successfully added", "success");
       formRef.current.reset();
     } catch (err) {

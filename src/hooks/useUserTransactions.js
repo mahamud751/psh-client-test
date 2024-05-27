@@ -8,9 +8,12 @@ const useUserTransactions = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
   const { isLoading, refetch } = useQuery([user?.email], () =>
-    fetch(`https://api.psh.com.bd/api/transaction/${user?.email}`, {
-      method: "GET",
-    })
+    fetch(
+      `https://psh-server-test.onrender.com/api/transaction/${user?.email}`,
+      {
+        method: "GET",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setTransaction(data?.transaction);

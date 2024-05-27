@@ -54,7 +54,10 @@ export function UserBooking({
         rating,
       };
 
-      await axios.post("https://api.psh.com.bd/api/review", product);
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/review",
+        product
+      );
       toast.success("Thanks ! for Your Review ");
       formRef.current.reset();
       handleDetailsShow();

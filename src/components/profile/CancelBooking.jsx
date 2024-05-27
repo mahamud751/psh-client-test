@@ -49,7 +49,7 @@ export function CancelBooking({
 
     try {
       await axios.patch(
-        `https://api.psh.com.bd/api/order/${endOrder?._id}`,
+        `https://psh-server-test.onrender.com/api/order/${endOrder?._id}`,
         cancelData
       );
       toast.success(" Requested ! I will contact You very Soon");

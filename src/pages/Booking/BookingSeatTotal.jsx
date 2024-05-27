@@ -79,7 +79,7 @@ const BookingSeatTotal = ({ data, seats, extraCharge }) => {
   const [singleUser, setSingleUser] = useState({});
   // Get Single User
   useEffect(() => {
-    fetch(`https://api.psh.com.bd/api/users/${user?._id}`)
+    fetch(`https://psh-server-test.onrender.com/api/users/${user?._id}`)
       .then((res) => res.json())
       .then((data) => setSingleUser(data));
   }, [user?._id]);

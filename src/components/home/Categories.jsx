@@ -51,7 +51,7 @@ export default function Categories() {
     const fetchCategories = async () => {
       try {
         const { data } = await axios.get(
-          "https://api.psh.com.bd/api/category",
+          "https://psh-server-test.onrender.com/api/category",
           {
             mode: "cors",
           }

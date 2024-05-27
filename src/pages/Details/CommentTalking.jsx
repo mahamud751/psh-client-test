@@ -25,7 +25,10 @@ const CommentTalking = () => {
         ...data2,
         userName,
       };
-      await axios.post("https://api.psh.com.bd/api/review", product);
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/review",
+        product
+      );
       MySwal.fire("Good job!", "successfully added", "success");
       formRef.current.reset();
     } catch (err) {
@@ -34,10 +37,13 @@ const CommentTalking = () => {
   };
   const handleReply = async (reviewId, replyBody) => {
     try {
-      await axios.post(`https://api.psh.com.bd/api/review/${reviewId}`, {
-        body: replyBody,
-        userName: userName,
-      });
+      await axios.post(
+        `https://psh-server-test.onrender.com/api/review/${reviewId}`,
+        {
+          body: replyBody,
+          userName: userName,
+        }
+      );
       MySwal.fire("Good job!", "successfully added reply", "success");
       formRef.current.reset();
     } catch (err) {

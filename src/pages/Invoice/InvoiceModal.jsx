@@ -23,7 +23,9 @@ const InvoiceModal = ({ handleOpen, size }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://api.psh.com.bd/api/branch");
+        const response = await axios.get(
+          "https://psh-server-test.onrender.com/api/branch"
+        );
         SetBranch(response.data);
       } catch (error) {
         console.log(error);

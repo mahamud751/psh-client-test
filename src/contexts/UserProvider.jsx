@@ -25,7 +25,7 @@ export const UserProvider = ({ children }) => {
   const loginUser = async (email, password) => {
     try {
       const response = await axios.post(
-        "https://api.psh.com.bd/api/users/login",
+        "https://psh-server-test.onrender.com/api/users/login",
         { email, password }
       );
 
@@ -79,14 +79,17 @@ export const UserProvider = ({ children }) => {
     role
   ) => {
     try {
-      const response = await axios.post("https://api.psh.com.bd/api/users", {
-        firstName,
-        email,
-        phone,
-        password,
-        refferCode,
-        photos,
-      });
+      const response = await axios.post(
+        "https://psh-server-test.onrender.com/api/users",
+        {
+          firstName,
+          email,
+          phone,
+          password,
+          refferCode,
+          photos,
+        }
+      );
 
       if (response.status === 200) {
         toast.success("Congratulations! Your account has been created.");

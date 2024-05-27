@@ -31,7 +31,10 @@ const Contact = () => {
     };
     try {
       dispatch(placeLoadingShow(true));
-      await axios.post("https://api.psh.com.bd/api/contact", contactUsData);
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/contact",
+        contactUsData
+      );
       toast.success(
         "Thank you. One Confirmation email will be sent to you if your appointment is confirmed from us."
       );

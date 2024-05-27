@@ -39,7 +39,10 @@ const RentVisitModal = ({ property, handleOpen2 }) => {
         branchId: property?.branch?._id,
       };
 
-      await axios.post("https://api.psh.com.bd/api/requestVisit", product);
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/requestVisit",
+        product
+      );
       dispatch(placeLoadingShow(false));
       toast.success("Thank you, we will contact you very soon");
       formRef.current.reset();

@@ -69,7 +69,7 @@ const Checkout = () => {
       getState,
     };
 
-    fetch("https://api.psh.com.bd/api/order", {
+    fetch("https://psh-server-test.onrender.com/api/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

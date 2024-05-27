@@ -80,7 +80,7 @@ const PersonalInfo = () => {
   }, []);
   // Get Single singleUser
   useEffect(() => {
-    fetch(`https://api.psh.com.bd/api/users/${user?._id}`)
+    fetch(`https://psh-server-test.onrender.com/api/users/${user?._id}`)
       .then((res) => res.json())
       .then((data) => {
         setSingleUser(data);
@@ -291,7 +291,10 @@ const PersonalInfo = () => {
     try {
       dispatch(placeLoadingShow(true));
 
-      await axios.post("https://api.psh.com.bd/api/order", formData);
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/order",
+        formData
+      );
       MySwal.fire({
         icon: "success",
         title: "Booking successfully done",

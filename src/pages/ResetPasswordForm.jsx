@@ -12,7 +12,7 @@ const ResetPasswordForm = () => {
   const handleResetPassword = async () => {
     try {
       const response = await axios.post(
-        `https://api.psh.com.bd/api/users/reset_password/${id}/${token}`,
+        `https://psh-server-test.onrender.com/api/users/reset_password/${id}/${token}`,
         { newPassword }
       );
       if (response.status === 200) {

@@ -9,7 +9,7 @@ const userEndOrder = () => {
     isLoading,
     refetch,
   } = useQuery([user], () =>
-    fetch(`https://api.psh.com.bd/api/order/${user?.email}`, {
+    fetch(`https://psh-server-test.onrender.com/api/order/${user?.email}`, {
       method: "GET",
     }).then((res) => res.json())
   );

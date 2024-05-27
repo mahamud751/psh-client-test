@@ -146,7 +146,10 @@ const FinalLoginModal = () => {
     try {
       dispatch(placeLoadingShow(true));
 
-      await axios.post("https://api.psh.com.bd/api/users/send-otp", otpData);
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/users/send-otp",
+        otpData
+      );
 
       const intervalId = setInterval(() => {
         // Decrease the remaining seconds by 1
@@ -184,7 +187,7 @@ const FinalLoginModal = () => {
     toast.success("Please Check Your Phone Number");
 
     // try {
-    //   await axios.post("https://api.psh.com.bd/api/users/send-otp", otpData);
+    //   await axios.post("https://psh-server-test.onrender.com/api/users/send-otp", otpData);
     //   const intervalId = setInterval(() => {
     //     // Decrease the remaining seconds by 1
     //     setSeconds((prevSeconds) => prevSeconds - 1);

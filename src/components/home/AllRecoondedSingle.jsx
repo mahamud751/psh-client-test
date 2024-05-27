@@ -26,7 +26,7 @@ const AllRecoondedSingle = ({ item, isSeatIntoDate, isAlreadySeatBook }) => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    fetch(`https://api.psh.com.bd/api/property/${item._id}`)
+    fetch(`https://psh-server-test.onrender.com/api/property/${item._id}`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, [item?._id]);
@@ -43,7 +43,10 @@ const AllRecoondedSingle = ({ item, isSeatIntoDate, isAlreadySeatBook }) => {
         propertyId,
         email,
       };
-      await axios.post("https://api.psh.com.bd/api/wishlist", product);
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/wishlist",
+        product
+      );
       // MySwal.fire("Thanks ! wishlisted");
       wishlistRefetch();
     } catch (err) {
@@ -68,7 +71,7 @@ const AllRecoondedSingle = ({ item, isSeatIntoDate, isAlreadySeatBook }) => {
         email,
       };
       await axios.delete(
-        `https://api.psh.com.bd/api/wishlist/${userWishList._id}`,
+        `https://psh-server-test.onrender.com/api/wishlist/${userWishList._id}`,
         product
       );
       // MySwal.fire("Successfullt Remove ! wishlisted");

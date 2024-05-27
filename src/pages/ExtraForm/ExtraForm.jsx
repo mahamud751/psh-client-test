@@ -81,7 +81,10 @@ const ExtraForm = ({ handleOpen }) => {
 
     try {
       dispatch(placeLoadingShow(true));
-      await axios.post("https://api.psh.com.bd/api/extraForm", formData);
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/extraForm",
+        formData
+      );
       dispatch(placeLoadingShow(false));
       toast.success("Thank you, we will contact you very soon");
       handleOpen(null);

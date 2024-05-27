@@ -9,9 +9,12 @@ const ForgotPasswordForm = () => {
 
   const handleForgotPassword = async () => {
     try {
-      await axios.post("https://api.psh.com.bd/api/users/forgot-password", {
-        email,
-      });
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/users/forgot-password",
+        {
+          email,
+        }
+      );
       toast.success("Please Check Your Email");
     } catch (error) {
       return toast.error("something went wrong");

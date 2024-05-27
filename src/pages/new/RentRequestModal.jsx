@@ -44,7 +44,10 @@ const RentRequestModal = ({ handleOpen }) => {
         ...data2,
       };
 
-      await axios.post("https://api.psh.com.bd/api/requestRent", product);
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/requestRent",
+        product
+      );
       dispatch(placeLoadingShow(false));
       toast.success("Thank you, we will contact you very soon");
       handleOpen(null);

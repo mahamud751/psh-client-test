@@ -33,7 +33,7 @@ const RoomDetails = ({ id }) => {
   const [data, setData] = useState([]);
   const [allBranch] = useBranch(id);
   useEffect(() => {
-    fetch(`https://api.psh.com.bd/api/property/${id}`)
+    fetch(`https://psh-server-test.onrender.com/api/property/${id}`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, [id]);
@@ -91,7 +91,10 @@ const RoomDetails = ({ id }) => {
         propertyId,
         email,
       };
-      await axios.post("https://api.psh.com.bd/api/wishlist", product);
+      await axios.post(
+        "https://psh-server-test.onrender.com/api/wishlist",
+        product
+      );
       // MySwal.fire("Thanks ! wishlisted");
       wishlistRefetch();
     } catch (err) {
@@ -117,7 +120,7 @@ const RoomDetails = ({ id }) => {
         email,
       };
       await axios.delete(
-        `https://api.psh.com.bd/api/wishlist/${userWishList._id}`,
+        `https://psh-server-test.onrender.com/api/wishlist/${userWishList._id}`,
         product
       );
       // MySwal.fire("Successfullt Remove ! wishlisted");

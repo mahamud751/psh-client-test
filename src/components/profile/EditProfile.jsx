@@ -104,7 +104,7 @@ function EditProfile() {
             // save User Update information to the database
             try {
               await axios.patch(
-                `https://api.psh.com.bd/api/users/${user?._id}`,
+                `https://psh-server-test.onrender.com/api/users/${user?._id}`,
                 finalUserData
               );
               localStorage.setItem("user", JSON.stringify(finalUserData));
@@ -121,7 +121,7 @@ function EditProfile() {
             // save User Update information without card picture to the database
             try {
               await axios.patch(
-                `https://api.psh.com.bd/api/users/${user?._id}`,
+                `https://psh-server-test.onrender.com/api/users/${user?._id}`,
                 userUpdate
               );
               localStorage.setItem("user", JSON.stringify(userUpdate));
@@ -158,7 +158,7 @@ function EditProfile() {
           photos: list,
         };
         await axios.patch(
-          `https://api.psh.com.bd/api/users/${user?._id}`,
+          `https://psh-server-test.onrender.com/api/users/${user?._id}`,
           product
         );
 
